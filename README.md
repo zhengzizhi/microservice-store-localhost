@@ -1,6 +1,6 @@
 ## How to start this project (spring.profiles.active = development)
 ```
-cd /opt/sources && git clone https://github.com/zhengzizhi/microservice-store-localhost.git
+cd /opt/examples && git clone https://github.com/zhengzizhi/microservice-store-localhost.git
 
 cd /opt/examples/microservice-store-localhost/discovery-service && mvn clean && mvn spring-boot:run
 cd /opt/examples/microservice-store-localhost/auth-service && mvn clean && mvn spring-boot:run
