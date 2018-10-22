@@ -1,3 +1,6 @@
+## blog address for this project
+https://blog.csdn.net/zhengzizhi/article/details/80737976
+
 ## How to start this project (spring.profiles.active = development)
 ```
 cd /opt/examples && git clone https://github.com/zhengzizhi/microservice-store-localhost.git
