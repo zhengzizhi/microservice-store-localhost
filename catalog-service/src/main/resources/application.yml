@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: development
+---
+spring:
+  profiles: development
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/testdb2?useSSL=false
+    username: root
+    password: dbpass
+    schema-username: root
+    schema-password: dbpass
+    data-username: root
+    data-password: dbpass
+    platform: mysql
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+    continue-on-error: true
+    initialization-mode: always
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/

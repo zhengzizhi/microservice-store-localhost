@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: development
+---
+spring:
+  profiles: development
+zuul:
+  sensitive-headers:
+  ignored-services: '*'
+  ignoredPatterns: /**/api/**
+  routes:
+    account-service: /account/**
+    inventory-service: /inventory/**
+    auth-service: /user/**
+    catalog-service: /catalog/**
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8181/uaa/user   
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/

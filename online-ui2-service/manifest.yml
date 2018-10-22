@@ -1,0 +1,16 @@
+---
+applications:
+- name: online-ui2-service
+  memory: 1024MB
+  instances: 1
+  host: online-ui2-service
+  path: target/online-ui2-service-0.0.1-SNAPSHOT.jar
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+    DEBUG: "true"
+    debug: "true"
+  services:
+   - discovery-service
+   - auth-service
+   - account-service
+   - gateway-service

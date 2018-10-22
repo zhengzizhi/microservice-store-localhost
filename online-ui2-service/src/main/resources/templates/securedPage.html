@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Spring Cloud SSO Client 2</title>
+<link href ="favicon.ico" rel="shortcut icon">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+<div class="container">
+	<div class="col-sm-12">
+		<h1>Secured Page</h1>
+		User: <span th:text="${#authentication.name}"></span><br/>		
+        authorities: <span th:text="${#authentication.authorities}"></span><br/>
+		<a th:href="@{/api/user/uaa/user}">User</a><br/>
+		Token: <span th:text="${#authentication.details.tokenValue}"></span><br/>
+		<span th:text="${#authentication}">Authentication</span>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: development
+server:
+    servlet:
+      session:
+        cookie:
+          name: UI2SESSION
+---
+spring:
+  profiles: development
+  thymeleaf:
+    cache: false
+zuul:
+  sensitive-headers:
+  ignored-services: '*'
+  routes:
+    gateway-service:
+      path: /api/**
+      url: http://localhost:9999
+#    user-service:
+#      path: /user/**
+#      url: http://localhost:8181/uaa/user
+security:
+  oauth2:
+    client:
+      clientId: acme
+      clientSecret: acmesecret
+      accessTokenUri: http://localhost:8181/uaa/oauth/token
+      userAuthorizationUri: http://localhost:8181/uaa/oauth/authorize
+    resource:
+      userInfoUri: http://localhost:8181/uaa/user
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/

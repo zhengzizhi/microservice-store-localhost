@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: online-ui2-service
+server:
+  port: 8782

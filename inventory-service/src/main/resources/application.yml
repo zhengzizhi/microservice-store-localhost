@@ -1,0 +1,22 @@
+spring:
+  data:
+    rest:
+      base-path: /api
+  profiles:
+    active: development
+---
+spring:
+  profiles: development
+  data:
+    neo4j:
+      uri: bolt://127.0.0.1:7687
+      username: neo4j
+      password: secret
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/

@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: online-ui1-service
+server:
+  port: 8781  
